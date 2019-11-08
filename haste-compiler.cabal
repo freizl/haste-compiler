@@ -50,7 +50,7 @@ Data-Files:
 extra-source-files:
     include/primop-info-710.hs,
     include/primop-stricts-710.hs
-    
+
 Flag portable
     Description:
         Install Haste into a self-contained directory. Package databases are
@@ -125,7 +125,7 @@ Executable hastec
         filepath,
         directory,
         cryptonite >= 0.10 && < 1.0,
-        ghc-simple >= 0.3 && < 0.4
+        ghc-simple >= 0.3 && < 0.5
     Main-Is:
         hastec.hs
     Other-Modules:

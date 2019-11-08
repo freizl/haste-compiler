@@ -7,3 +7,5 @@
 dist/
 TestDriver.js
 TestDriver.O2.js
+dist-newstyle
+result

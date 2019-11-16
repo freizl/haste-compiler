@@ -10,6 +10,7 @@ let
               haste-compiler = haskellPackagesNew.callPackage ./haste-compiler.nix { } ;
               system-filepath = haskellPackagesNew.callPackage ./nix/system-filepath-0.4.14.nix { } ;
               feed = haskellPackagesNew.callPackage ./nix/feed-0.3.12.0.nix { } ;
+              ghc-simple = haskellPackagesNew.callPackage ./nix/ghc-simple-0.3.nix { } ;
             };
           };
         };
@@ -20,8 +21,14 @@ let
   ## nix-channel --add https://nixos.org/channels/nixpkgs-18.03-darwin nixpkgs-18.0.3
   pkgs = import <nixpkgs-18.0.3> { inherit config; };
 
-in
+in rec
   { haste-compiler = pkgs.haskell.packages.${compiler}.haste-compiler;
+    env = pkgs.stdenv.mkDerivation {
+      name = "haste-compiler-shell";
+      buildInputs = [
+        haste-compiler
+      ];
+    };
   }
 
 

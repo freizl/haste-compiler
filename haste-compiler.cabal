@@ -125,7 +125,7 @@ Executable hastec
         filepath,
         directory,
         cryptonite >= 0.10 && < 1.0,
-        ghc-simple >= 0.3 && < 0.5
+        ghc-simple >= 0.3 && < 0.4
     Main-Is:
         hastec.hs
     Other-Modules:

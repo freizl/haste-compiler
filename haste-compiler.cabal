@@ -50,7 +50,7 @@ Data-Files:
 extra-source-files:
     include/primop-info-710.hs,
     include/primop-stricts-710.hs
-    
+
 Flag portable
     Description:
         Install Haste into a self-contained directory. Package databases are
